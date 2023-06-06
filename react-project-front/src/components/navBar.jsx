@@ -1,13 +1,19 @@
 import { NavLink } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/auth.context";
+import { useEffect, useState } from "react";
 
 function NavBar() {
   const { user } = useAuth();
+  const [mode,setMode] = useState("light");
+  const mainHtml = document.getElementsByTagName("html")[0];
+  useEffect(()=> {
+    mainHtml.setAttribute("data-bs-theme",mode)
+  },[mode]);
   return (
-    <>
+    <div className="d-flex justify-content-between shadow-sm">
       <nav
-        className="navbar navbar-expand-sm navbar-light bg-light shadow-sm"
+        className="navbar navbar-expand-sm"
         aria-label="Fifth navbar example"
       >
         <div className="container">
@@ -71,7 +77,8 @@ function NavBar() {
           </div>
         </div>
       </nav>
-    </>
+      <button className="btn border" onClick={()=> setMode(mode==="light" ? "dark":"light")}>{mode==="light" ? "dark mode":"light mode"}</button>
+    </div>
   );
 }
 
