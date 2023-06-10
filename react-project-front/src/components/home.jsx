@@ -9,10 +9,10 @@ function Home() {
       <PageHeader
         title={
           <>
-            Real<i className="bi bi-geo-fill"></i>App
+            My <i className="bi bi-globe-europe-africa"></i> World Home Page
           </>
         }
-        description={"something about me"}
+        description={'Welcome to "My World" together we can make a change'}
       ></PageHeader>
       <div className="row">
         {!cards.length ? (

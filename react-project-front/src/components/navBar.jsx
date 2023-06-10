@@ -18,7 +18,7 @@ function NavBar() {
       >
         <div className="container">
           <Link className="navbar-brand" to="/">
-            Chief<i class="bi bi-android2"></i>Droid
+            My <i className="bi bi-globe-europe-africa"></i> World
           </Link>
           <button
             className="navbar-toggler collapsed"
@@ -66,18 +66,13 @@ function NavBar() {
                       Sign Up
                     </NavLink>
                   </li>
-                  <li className="nav-item">
-                    <NavLink className="nav-link" to="/sign-up-business">
-                      Sign Up Business
-                    </NavLink>
-                  </li>
                 </>
               )}
             </ul>
           </div>
         </div>
       </nav>
-      <button className="btn border" onClick={()=> setMode(mode==="light" ? "dark":"light")}>{mode==="light" ? "dark mode":"light mode"}</button>
+      <button className="btn" onClick={()=> setMode(mode==="light" ? "dark":"light")}>{mode==="light" ? <i className="bi bi-moon-fill"></i>:<i className="bi bi-brightness-high-fill"></i>}</button>
     </div>
   );
 }

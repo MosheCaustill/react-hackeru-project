@@ -5,7 +5,7 @@ function About() {
     <PageHeader
       title={
         <>
-          About Real<i className="bi bi-geo-fill"></i>App
+          About My <i className="bi bi-globe-europe-africa"></i> World
         </>
       }
       description={"something about the app"}

@@ -52,7 +52,7 @@ if(user) {
       <PageHeader
         title={
           <>
-            Sign In With Real<i className="bi bi-geo-fill"></i>App
+            Sign In With My <i className="bi bi-globe-europe-africa"></i> World
           </>
         }
         description={"sign in to your account"}
