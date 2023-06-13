@@ -3,7 +3,9 @@ import Card from "./card";
 import { useMyCards } from "../hooks/useMyCards";
 
 function Home() {
+  
   const cards = useMyCards();
+
   return (
     <>
       <PageHeader
