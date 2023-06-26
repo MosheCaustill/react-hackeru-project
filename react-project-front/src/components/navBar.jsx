@@ -5,19 +5,22 @@ import { useEffect, useState } from "react";
 
 function NavBar() {
   const { user } = useAuth();
-  const [mode,setMode] = useState("light");
+  const [mode, setMode] = useState(localStorage.getItem("screenMode"));
   const mainHtml = document.getElementsByTagName("html")[0];
-  useEffect(()=> {
-    mainHtml.setAttribute("data-bs-theme",mode)
-  },[mode]);
+
+  useEffect(() => {
+    mainHtml.setAttribute("data-bs-theme", mode);
+    localStorage.setItem("screenMode", mode);
+  }, [mode]);
+
   return (
-    <div className="d-flex justify-content-between shadow-sm">
-      <nav
-        className="navbar navbar-expand-sm"
-        aria-label="Fifth navbar example"
-      >
-        <div className="container">
-          <Link className="navbar-brand" to="/">
+    <div className="shadow-sm container">
+      <div className="d-flex row">
+        <nav
+          className="navbar navbar-expand-sm"
+          aria-label="Fifth navbar example"
+        >
+          <Link className="navbar-brand mx-3" to="/">
             My <i className="bi bi-globe-europe-africa"></i> World
           </Link>
           <button
@@ -31,7 +34,9 @@ function NavBar() {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-
+          <div>
+            
+          </div>
           <div className="navbar-collapse collapse" id="navbarsExample05">
             <ul className="navbar-nav me-auto mb-2 mb-md-0">
               <li className="nav-item">
@@ -47,32 +52,50 @@ function NavBar() {
                 </li>
               )}
             </ul>
-            <ul className="navbar-nav ms-auto mb-2 mb-md-0">
-              {user ? (
-                <li className="nav-item">
-                  <NavLink className="nav-link" to="/sign-out">
-                    Sign Out
-                  </NavLink>
-                </li>
-              ) : (
-                <>
+            <div className="ms-auto">
+              <ul className="navbar-nav mb-2 mb-md-0">
+                {user ? (
                   <li className="nav-item">
-                    <NavLink className="nav-link" to="/sign-in">
-                      Sign In
+                    <NavLink className="nav-link" to="/sign-out">
+                      Sign Out
                     </NavLink>
                   </li>
-                  <li className="nav-item">
-                    <NavLink className="nav-link" to="/sign-up">
-                      Sign Up
-                    </NavLink>
-                  </li>
-                </>
-              )}
-            </ul>
+                ) : (
+                  <>
+                    <li className="nav-item">
+                      <NavLink className="nav-link" to="/sign-in">
+                        Sign In
+                      </NavLink>
+                    </li>
+                    <li className="nav-item">
+                      <NavLink className="nav-link" to="/sign-up">
+                        Sign Up
+                      </NavLink>
+                    </li>
+                  </>
+                )}
+              </ul>
+            </div>
           </div>
-        </div>
-      </nav>
-      <button className="btn" onClick={()=> setMode(mode==="light" ? "dark":"light")}>{mode==="light" ? <i className="bi bi-moon-fill"></i>:<i className="bi bi-brightness-high-fill"></i>}</button>
+          {user && (
+          <div className="ms-3">
+            <i className="bi bi-person-check"></i>
+          </div>
+        )}
+          <button
+          className="btn ms-auto w-auto"
+          onClick={() => setMode(mode === "light" ? "dark" : "light")}
+        >
+          {mode === "light" ? (
+            <i className="bi bi-moon-fill"></i>
+          ) : (
+            <i className="bi bi-brightness-high-fill"></i>
+          )}
+        </button>
+        </nav>
+        
+
+      </div>
     </div>
   );
 }

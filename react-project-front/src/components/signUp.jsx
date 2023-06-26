@@ -1,7 +1,7 @@
 import PageHeader from "./common/pageHeader";
 import Input from "./common/input";
 import { useFormik } from "formik";
-import Joi, { string } from "joi";
+import Joi from "joi";
 
 import formikValidateUsingJoi from "./utils/formikValidateUsingJoi";
 
@@ -10,6 +10,7 @@ import { useState } from "react";
 import { useAuth } from "../context/auth.context";
 
 import CheckBox from "./common/checkBox";
+import { toast } from "react-toastify";
 
 function SignUp({ redirect = "/" }) {
   const [error, setError] = useState("");
@@ -54,6 +55,7 @@ function SignUp({ redirect = "/" }) {
         await createUser(values);
         await login({ email: values.email, password: values.password });
         navigate(redirect);
+        toast("thank you for joining us")
       } catch ({ response }) {
         if (response && response.status === 400) {
           setError(response.data);

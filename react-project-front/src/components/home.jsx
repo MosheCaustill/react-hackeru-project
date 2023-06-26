@@ -5,7 +5,8 @@ import { useMyCards } from "../hooks/useMyCards";
 function Home() {
   
   const cards = useMyCards();
-
+  console.log(cards);
+  
   return (
     <>
       <PageHeader

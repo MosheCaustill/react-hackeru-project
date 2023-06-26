@@ -8,6 +8,7 @@ import { useState } from "react";
 
 import { Navigate, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/auth.context";
+import { toast } from "react-toastify";
 
 
 function SignIn() {
@@ -35,6 +36,7 @@ function SignIn() {
       try {
         await login(values);
         navigate("/");
+        toast('thank you for signing in')
       } catch ({ response }) {
         if (response && response.status === 400) {
           setError(response.data);
