@@ -12,7 +12,7 @@ function MyCards() {
       <PageHeader
         title={
           <>
-            My Real<i className="bi bi-geo-fill"></i>App Cards
+            My<i className="bi bi-geo-fill"></i>Wold Cards
           </>
         }
         description={"Your cards are in the list below"}
@@ -22,7 +22,7 @@ function MyCards() {
         <Link to="/create-card">Create a new card</Link>
       </div>
 
-      <div className="row">
+      <div className="row d-flex flex-wrap justify-content-evenly">
         {!cards.length ? (
         <p>no cards...</p>
         ) : (

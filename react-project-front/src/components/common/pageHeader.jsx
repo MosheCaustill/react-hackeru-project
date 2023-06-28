@@ -6,7 +6,7 @@ function PageHeader({ title, description }) {
           <h1>{title}</h1>
         </div>
       </div>
-      <div className="row mt-2">
+      <div className="row mt-2 fw-bold fst-italic">
         {description ? (
           <div className="col-12">
             <p>{description}</p>

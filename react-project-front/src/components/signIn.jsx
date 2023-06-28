@@ -36,7 +36,7 @@ function SignIn() {
       try {
         await login(values);
         navigate("/");
-        toast('thank you for signing in')
+        toast('thank you for signing in',{position:toast.POSITION.TOP_CENTER})
       } catch ({ response }) {
         if (response && response.status === 400) {
           setError(response.data);

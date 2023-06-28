@@ -55,7 +55,7 @@ function SignUp({ redirect = "/" }) {
         await createUser(values);
         await login({ email: values.email, password: values.password });
         navigate(redirect);
-        toast("thank you for joining us")
+        toast("thank you for joining us",{position:toast.POSITION.TOP_CENTER})
       } catch ({ response }) {
         if (response && response.status === 400) {
           setError(response.data);

@@ -14,8 +14,8 @@ function NavBar() {
   }, [mode]);
 
   return (
-    <div className="shadow-sm container">
-      <div className="d-flex row">
+    <div className="bg-secondary-subtle border-bottom">
+      <div className="d-flex row mx-5 ">
         <nav
           className="navbar navbar-expand-sm"
           aria-label="Fifth navbar example"
@@ -34,9 +34,7 @@ function NavBar() {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div>
-            
-          </div>
+
           <div className="navbar-collapse collapse" id="navbarsExample05">
             <ul className="navbar-nav me-auto mb-2 mb-md-0">
               <li className="nav-item">
@@ -53,7 +51,7 @@ function NavBar() {
               )}
             </ul>
             <div className="ms-auto">
-              <ul className="navbar-nav mb-2 mb-md-0">
+              <ul className="navbar-nav">
                 {user ? (
                   <li className="nav-item">
                     <NavLink className="nav-link" to="/sign-out">
@@ -77,24 +75,24 @@ function NavBar() {
               </ul>
             </div>
           </div>
-          {user && (
-          <div className="ms-3">
-            <i className="bi bi-person-check"></i>
-          </div>
-        )}
-          <button
-          className="btn ms-auto w-auto"
-          onClick={() => setMode(mode === "light" ? "dark" : "light")}
-        >
-          {mode === "light" ? (
-            <i className="bi bi-moon-fill"></i>
+          {user ? (
+            <div className="ms-3">
+              <i className="bi bi-person-check"></i>
+            </div>
           ) : (
-            <i className="bi bi-brightness-high-fill"></i>
+            <i className="bi bi-person-slash"></i>
           )}
-        </button>
+          <button
+            className="btn ms-auto w-auto"
+            onClick={() => setMode(mode === "light" ? "dark" : "light")}
+          >
+            {mode === "light" ? (
+              <i className="bi bi-moon-fill"></i>
+            ) : (
+              <i className="bi bi-brightness-high-fill"></i>
+            )}
+          </button>
         </nav>
-        
-
       </div>
     </div>
   );

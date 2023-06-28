@@ -51,7 +51,7 @@ function CardEdit({ redirect = "/my-cards" }) {
           body.bizImage = bizImage;
         }
         cardsService.updateCard(id, body);
-        toast("card edited successfully");
+        toast("card edited successfully",{position:toast.POSITION.TOP_CENTER});
         navigate(redirect);
       } catch ({ response }) {
         if (response && response.status === 400) {
@@ -63,7 +63,6 @@ function CardEdit({ redirect = "/my-cards" }) {
 
   useEffect(() => {
     if (!card) return;
-    console.log(card);
 
     const { bizName, bizDescription, bizAddress, bizPhone, bizImage } = card;
     form.setValues({

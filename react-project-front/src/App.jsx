@@ -16,22 +16,17 @@ import ProtectedRoute from "./components/common/protectedRoute";
 import CardCreate from "./components/cardCreate";
 import CardsDelete from "./components/cardsDelete";
 import CardEdit from "./components/cardsEdit";
-import BackgroundImagePage from "./components/common/bgImage";
+import ViewCard from "./components/viewCard";
 
 function App() {
   return (
-    <div className="App d-flex flex-column"  style={{
-      backgroundImage:
-        `url(https://pixabay.com/photos/hands-world-map-global-earth-600497/)`
-    }}>
+    <div className="App d-flex flex-column bg-primary-subtle">
       <ToastContainer />
       <header>
         <NavBar></NavBar>
       </header>
 
-      <main
-        className="flex-fill min-vh-100 container"
-      >
+      <main className="flex-fill min-vh-100 container mb-2">
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="about" element={<About />}></Route>
@@ -74,6 +69,14 @@ function App() {
             element={
               <ProtectedRoute onlyBiz>
                 <CardEdit></CardEdit>
+              </ProtectedRoute>
+            }
+          ></Route>
+          <Route
+            path="/my-cards/view/:id"
+            element={
+              <ProtectedRoute onlyBiz>
+                <ViewCard></ViewCard>
               </ProtectedRoute>
             }
           ></Route>

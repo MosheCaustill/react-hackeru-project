@@ -9,6 +9,11 @@
 - React library.
 - bootstrap  V 5.3.
 - mongoDb.
+- formik.
+- joi.
+- axios.
+- toastify.
+- react router dom
 
 ## Get started
 
