@@ -79,7 +79,7 @@ function CardEdit({ redirect = "/my-cards" }) {
       <PageHeader
         title={
           <>
-            Edit Your Real<i className="bi bi-geo-fill"></i>App Business Card
+            My<i className="bi bi-geo-fill"></i>World Business Card Edit
           </>
         }
         description={"Business Card Edit"}

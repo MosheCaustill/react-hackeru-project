@@ -9,7 +9,7 @@ function PageHeader({ title, description }) {
       <div className="row mt-2 fw-bold fst-italic">
         {description ? (
           <div className="col-12">
-            <p>{description}</p>
+            <h2>{description}</h2>
           </div>
         ) : null}
       </div>

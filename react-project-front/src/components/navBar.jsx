@@ -77,13 +77,13 @@ function NavBar() {
           </div>
           {user ? (
             <div className="ms-3">
-              <i className="bi bi-person-check"></i>
+              <i className="bi bi-person-fill-check" style={{fontSize:"1.5rem"}}></i>
             </div>
           ) : (
-            <i className="bi bi-person-slash"></i>
+            <i className="bi bi-person-fill-x" style={{fontSize:"1.5rem"}}></i>
           )}
           <button
-            className="btn ms-auto w-auto"
+            className="btn ms-auto w-auto" style={{fontSize:"1.2rem"}}
             onClick={() => setMode(mode === "light" ? "dark" : "light")}
           >
             {mode === "light" ? (
