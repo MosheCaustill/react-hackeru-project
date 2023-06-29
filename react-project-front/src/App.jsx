@@ -9,7 +9,7 @@ import SignUp from "./components/signUp";
 import SignIn from "./components/signIn";
 import { Routes } from "react-router-dom";
 import { Route } from "react-router-dom";
-import SignUpBusiness from "./components/signUpBusiness";
+
 import SignOut from "./components/signOut";
 import MyCards from "./components/myCards";
 import ProtectedRoute from "./components/common/protectedRoute";
@@ -33,10 +33,6 @@ function App() {
           <Route
             path="sign-up"
             element={<SignUp redirect="/sign-in" />}
-          ></Route>
-          <Route
-            path="sign-up-business"
-            element={<SignUpBusiness redirect="/my-cards" />}
           ></Route>
           <Route path="sign-in" element={<SignIn redirect="/" />}></Route>
           <Route path="sign-out" element={<SignOut redirect="/" />}></Route>
